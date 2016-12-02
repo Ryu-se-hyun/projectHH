@@ -44,8 +44,10 @@ $("#updateBtn").click(function(event) {
 
 	var form0 = $('form')[0];
 	var form1 = $('form')[1];
+	var form2 = $('form')[0];
 	var formData0 = new FormData(form0);
 	var formData1 = new FormData(form1);
+	var formData2 = new FormData(form2);
 	var newPassword = $("#passwordUp").val();
 
 	$.getJSON(serverAddr + "/auth/loginUser.json", function(obj) {
@@ -63,7 +65,7 @@ $("#updateBtn").click(function(event) {
 
 		if (dbPhoto != test && newPassword != "") {
 			//console.log("사진 패스워드 둘다 바꿔요");
-			ajaxUpdateFile2(formData0);
+			ajaxUpdateFile2(formData2);
 			
 		} else if (dbPhoto === test && newPassword != "") {
 			//console.log("패스워드만 바꿔요");
